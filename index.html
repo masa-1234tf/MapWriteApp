@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./public/stylesheets/style.css">
+    <title>SCUM MAP </title>
+</head>
+
+<body>
+    <h1 class="title">SCUM MAP</h1>
+    <div class="main">
+        <div class="toolbar">
+            <ul>
+                <li id="black"> </li>
+                <li id="blue"></li>
+                <li id="red"></li>
+                <li id="green"></li>
+                <li id="small">S</li>
+                <li id="middle">M</li>
+                <li id="large">L</li>
+                <li id="clear">clear</li>
+            </ul>
+        </div>
+        <div style="clear:left;"></div>
+        <div class="canvas"><canvas id="myCanvas"></canvas></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./public/javascripts/main.js"></script>
+</body>
+
+</html>
