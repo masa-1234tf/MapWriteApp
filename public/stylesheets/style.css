@@ -65,12 +65,12 @@ body {
 }
 
 .canvas {
-    width: 750px;
-    height: 700px;
+    width: 1075px;
+    height: 1079px;
     border: 1px solid #ccc;
 }
 
 .canvas canvas {
-    width: 750px;
-    height: 700px;
+    width: 1075px;
+    height: 1079px;
 }

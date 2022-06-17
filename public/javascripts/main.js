@@ -2,13 +2,13 @@ window.addEventListener("load", function () {
     var socket = io.connect("/");
     var canvas = document.getElementById("myCanvas");
     var c = canvas.getContext("2d");
-    var w = 750;
-    var h = 700;
+    var w = 1075;
+    var h = 1079;
     var drawing = false;
     var oldPos;
     // Image オブジェクトを生成
     var img = new Image();
-    img.src = 'https://scum-map.com/images/home_page/map.jpg';
+    img.src = './public/image/20220618044054_1.jpg';
 
     // 画像読み込み終了してから描画
     img.onload = function () {
