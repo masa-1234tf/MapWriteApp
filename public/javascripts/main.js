@@ -70,8 +70,10 @@ window.addEventListener("load", function () {
     $("#red").click(function () { c.strokeStyle = "red"; socket.emit("color", "red"); });
     $("#green").click(function () { c.strokeStyle = "green"; socket.emit("color", "green"); });
     $("#small").click(function () { c.lineWidth = 5; socket.emit("lineWidth", 5); });
-    $("#middle").click(function () { c.lineWidth = 10; socket.emit("lineWidth", 10); });
-    $("#large").click(function () { c.lineWidth = 20; socket.emit("lineWidth", 20); });
+    $("#clear").click(function () {
+        data=[];
+        console.log("clear");
+    });
     socket.on("draw", function (data) {
         console.log("on draw : " + data);
         c.beginPath();
