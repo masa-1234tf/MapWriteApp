@@ -4,7 +4,6 @@
 }
 
 body {
-    width: 500px;
     height: 10000px;
 }
 
@@ -19,19 +18,25 @@ body {
 }
 
 .toolbar {
-    top:500px;
-    position: absolute;
+    top:400px;
+    position: relative;
+}
+.toolbar ul {
+    display: flex;
 }
 
 .toolbar li {
-    width: 44px;
-    height: 44px;
+    width: 24px;
+    height: 24px;
     margin: auto;
     list-style-type: none;
     border: 1px solid #ccc;
     border-radius: 6px;
     margin: 10px;
     background-color: #fff;
+}
+.toolbar li:hover {
+    opacity: 0.5;
 }
 
 #black {

@@ -26,6 +26,10 @@ io.on('connection', (socket) => {
         console.log(color);
         socket.broadcast.emit("color", color);
     });
+    socket.on("clear", function (data) {
+        console.log(data);
+        socket.broadcast.emit("clear",data);
+    });
 
     socket.on("lineWidth", function (width) {
         console.log(width);

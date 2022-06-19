@@ -69,10 +69,16 @@ window.addEventListener("load", function () {
     $("#blue").click(function () { c.strokeStyle = "blue"; socket.emit("color", "blue"); });
     $("#red").click(function () { c.strokeStyle = "red"; socket.emit("color", "red"); });
     $("#green").click(function () { c.strokeStyle = "green"; socket.emit("color", "green"); });
-    $("#small").click(function () { c.lineWidth = 5; socket.emit("lineWidth", 5); });
+    $("#small").click(function () { c.lineWidth = 3; socket.emit("lineWidth", 5); });
     $("#clear").click(function () {
-        data=[];
-        console.log("clear");
+        c.clearRect(0, 0, w, h);
+        var img = new Image();
+        img.src = './public/image/20220618044054_1.jpg';
+
+        // 画像読み込み終了してから描画
+        img.onload = function () {
+            c.drawImage(img, 10, 10);
+        }
     });
     socket.on("draw", function (data) {
         console.log("on draw : " + data);
@@ -86,6 +92,10 @@ window.addEventListener("load", function () {
         console.log("on color : " + data);
         c.strokeStyle = data;
     });
+    socket.on("clear", function (data) {
+        console.log("on clear : " + data);
+        data = [];
+    })
     socket.on("lineWidth", function (data) {
         console.log("on lineWidth : " + data);
         c.lineWidth = data;
