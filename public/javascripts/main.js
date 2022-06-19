@@ -79,6 +79,7 @@ window.addEventListener("load", function () {
         img.onload = function () {
             c.drawImage(img, 10, 10);
         }
+        socket.emit("clear")
     });
     socket.on("draw", function (data) {
         console.log("on draw : " + data);
@@ -94,6 +95,13 @@ window.addEventListener("load", function () {
     });
     socket.on("clear", function (data) {
         console.log("on clear : " + data);
+        c.clearRect(0, 0, w, h);
+        img.src = './public/image/20220618044054_1.jpg';
+
+        // 画像読み込み終了してから描画
+        img.onload = function () {
+            c.drawImage(img, 10, 10);
+        }
         data = [];
     })
     socket.on("lineWidth", function (data) {
