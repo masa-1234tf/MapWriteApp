@@ -9,7 +9,9 @@ body {
     color: #fff;
 }
 .header {
-    padding: 30px;
+    padding: 44px;
+    margin-left: 10%;
+    color: #000;
 }
 .title {
     padding: 0px;
@@ -25,7 +27,7 @@ body {
 }
 
 .toolbar {
-    bottom:60px;
+    bottom:100px;
     position: fixed;
     display: flex;
 }
