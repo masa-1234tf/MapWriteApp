@@ -5,10 +5,17 @@
 
 body {
     height: 10000px;
+    background-color: rgb(78, 78, 78);
+    color: #fff;
 }
-
+.header {
+    padding: 30px;
+}
 .title {
-    padding: 10px;
+    padding: 0px;
+}
+.header p {
+    padding-left: 40px;
 }
 
 .main {
@@ -18,16 +25,18 @@ body {
 }
 
 .toolbar {
-    top:400px;
-    position: relative;
+    bottom:60px;
+    position: fixed;
+    display: flex;
 }
 .toolbar ul {
-    display: flex;
+    
 }
 
 .toolbar li {
-    width: 24px;
-    height: 24px;
+    color: black;
+    width: 44px;
+    height: 44px;
     margin: auto;
     list-style-type: none;
     border: 1px solid #ccc;
@@ -64,7 +73,6 @@ body {
 .canvas {
     width: 1075px;
     height: 1079px;
-    border: 1px solid #ccc;
 }
 
 .canvas canvas {

@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
     canvas.width = w;
     canvas.height = h;
     c.strokeStyle = "#000000";
-    c.lineWidth = 5;
+    c.lineWidth = 3;
     c.lineJoin = "round";
     c.lineCap = "round";
 
