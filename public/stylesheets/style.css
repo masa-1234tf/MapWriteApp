@@ -71,6 +71,7 @@ body {
 }
 
 .canvas {
+    margin-left: 10%;
     width: 1075px;
     height: 1079px;
 }
