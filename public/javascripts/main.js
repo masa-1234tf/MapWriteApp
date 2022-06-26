@@ -40,17 +40,14 @@ window.addEventListener("load", function () {
     }
                        
     canvas.addEventListener("mousedown", function (event) {
-        console.log("mousedown");
         drawing = true;
         oldPos = getPos(event);
     }, false);
     canvas.addEventListener("mouseup", function () {
-        console.log("mouseup");
         drawing = false;
     }, false);
     canvas.addEventListener("mousemove", function (event) {
         var pos = getPos(event);
-        console.log("mousemove : x=" + pos.x + ", y=" + pos.y + ", drawing=" + drawing);
         if (drawing) {
             c.beginPath();
             c.moveTo(oldPos.x, oldPos.y);
@@ -62,7 +59,6 @@ window.addEventListener("load", function () {
         }
     }, false);
     canvas.addEventListener("mouseout", function () {
-        console.log("mouseout");
         drawing = false;
     }, false);
     $("#black").click(function () { c.strokeStyle = "black"; socket.emit("color", "black"); });
@@ -82,7 +78,6 @@ window.addEventListener("load", function () {
         socket.emit("clear")
     });
     socket.on("draw", function (data) {
-        console.log("on draw : " + data);
         c.beginPath();
         c.moveTo(data.before.x, data.before.y);
         c.lineTo(data.after.x, data.after.y);
@@ -90,11 +85,9 @@ window.addEventListener("load", function () {
         c.closePath();
     });
     socket.on("color", function (data) {
-        console.log("on color : " + data);
         c.strokeStyle = data;
     });
     socket.on("clear", function (data) {
-        console.log("on clear : " + data);
         c.clearRect(0, 0, w, h);
         img.src = './public/image/20220618044054_1.jpg';
 
@@ -105,7 +98,7 @@ window.addEventListener("load", function () {
         data = [];
     })
     socket.on("lineWidth", function (data) {
-        console.log("on lineWidth : " + data);
         c.lineWidth = data;
     });
+
 }, false);
